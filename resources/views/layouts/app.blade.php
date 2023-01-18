@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -22,13 +23,25 @@
 <body>
     <div id="app">
 
-        @include('partials.admin-header')
 
+        @include('partials.header')
+        <div class="container-fluid">
+            <div class="row h-100 justify-content-center">
+                @guest
+                    @else
+                    <div class="p-0 aside-section">
+                        @include('admin.partials.aside-menu')
+                    </div>
+                @endguest
 
-        <main class="">
-            @yield('content')
-        </main>
-        @include('partials.footer')
+                <div class="main-content p-0">
+
+                    <main class="">
+                     @yield('content')
+                     </main>
+                </div>
+            </div>
+        {{-- @include('partials.footer') --}}
     </div>
 </body>
 

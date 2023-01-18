@@ -1,5 +1,63 @@
 @import '~bootstrap/scss/bootstrap';
 
+a{
+    color:white;
+    text-decoration: none;
+}
+
+.aside-section{
+    width:15vw;
+}
+
+.main-content{
+    width:85vw;
+}
+
+header{
+    height:80px;
+    & *{
+        max-height:100%;
+    }
+    img.logo-dvora{
+        height:60px;
+    }
+}
+
+.aside-menu{
+    background-color: black;
+
+    ul{
+        list-style: none;
+
+    }
+    .settings-area{
+        text-align: center;
+        &::before{
+            content:'';
+            display:block;
+            color:white;
+            width:80%;
+            border:1px solid white;
+            margin:0 auto 25px;
+        }
+
+    }
+}
+
+.home-profile{
+    p{
+        font-size:130%;
+    }
+}
+
+main{
+    height:calc(100vh - 80px);
+    .container-fluid{
+        height:100%;
+        margin:0;
+    }
+}
+
 footer{
     height:100px;
     padding:10px;
