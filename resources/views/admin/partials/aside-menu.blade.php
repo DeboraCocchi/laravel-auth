@@ -5,7 +5,7 @@
                 <a href="{{ route('admin.dashboard') }}"><i class="fa-regular fa-user"></i> Area Personale</a>
             </li>
             <li class="my-2">
-                <a href="#"><i class="fa-solid fa-object-group"></i> I tuoi progetti</a>
+                <a href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-object-group"></i> I tuoi progetti</a>
             </li>
             <li class="my-2">
                 <a href="#"><i class="fa-solid fa-circle-plus"></i> Aggiungi nuovo</a>
