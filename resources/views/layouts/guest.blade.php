@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>DVORA</title>
+        <link rel="icon" type="image/png" href="{{url('/img/ape-b-n.png')}}">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -15,7 +16,10 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         @include('partials.header')
-        @yield('content')
+        <main>
+            @yield('content')
+        </main>
+
         {{-- <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">

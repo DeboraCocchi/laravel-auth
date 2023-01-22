@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
-            $table->string('slug', 120)->unique();
+            // $table->string('slug', 120)->unique();
             $table->string('client_name', 50);
             $table->mediumText('summary');
-            $table->string('cover_image');
+            $table->string('cover_image')->nullable();
+            $table->string('image_original_name')->nullable();
             $table->timestamps();
         });
     }

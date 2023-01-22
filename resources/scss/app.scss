@@ -3,6 +3,11 @@
 a{
     color:white;
     text-decoration: none;
+    transition: all .2s ease-in-out;
+
+    &:hover{
+        color:#ffc107;
+    }
 }
 
 .aside-section{
@@ -12,34 +17,63 @@ a{
     position:fixed;
     left:0;
     bottom:0;
+    z-index:10;
 }
 
 .main-content{
     position:relative;
-    height:calc(100vh - 80px);
-    width:85vw;
-    right:0;
+    min-height:100vh;
+    overflow-y:hidden;
+    overflow-x: hidden;
+
+    main .dc-proj{
+        padding:10px 40px 100px 18vw;
+        background-color: rgba(238, 238, 238, 0.701);
+        overflow-y:hidden;
+        overflow-x: hidden;
+    }
     main{
-        padding:100px 40px 20px;
-        .container-fluid{
-            height:100%;
-            margin:0;
-        }
+        position:relative;
+        top:80px;
+        padding-top:30px;
+        overflow-y:hidden;
+    }
+    .dc-proj-image.card-img-top{
+        max-height:300px;
+        width:auto;
     }
 }
 
 header{
-    height:80px;
+    height:120px;
     width:100vw;
     position:fixed;
     top:0;
     left:0;
-    z-index:99;
+    z-index:90;
+    overflow: hidden;
     & *{
         max-height:100%;
     }
     img.logo-dvora{
         height:60px;
+    }
+    .navbar {
+
+        ul.dropdown-menu[data-bs-popper]{
+            background-color: #ffc107;
+            left:calc(100% - 170px);
+            width:140px;
+            position:absolute;
+            z-index:95;
+            a.dropdown-item:hover{
+                color:white;
+                background-color: #ffc107;
+                border-radius:0.5rem;
+
+        }
+
+    }
     }
 }
 
@@ -87,4 +121,8 @@ footer{
 
 .logout-btn{
     width:140px;
+}
+
+img.show-proj-img{
+    max-width:400px;
 }

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>DVORA</title>
-
+    <link rel="icon" type="image/png" href="{{url('/img/ape-b-n.png')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,16 +29,17 @@
             <div class="row h-100 justify-content-center">
                 @guest
                     @else
-                    <div class="p-0 aside-section">
+                    <div class="p-0 aside-section col">
                         @include('admin.partials.aside-menu')
                     </div>
                 @endguest
 
-                <div class="main-content p-0">
+                <div class="main-content p-0 col">
+                    <main>
+                        @yield('content')
+                        @yield('dashboard')
 
-                    <main class="">
-                     @yield('content')
-                     </main>
+                    </main>
                 </div>
             </div>
         {{-- @include('partials.footer') --}}

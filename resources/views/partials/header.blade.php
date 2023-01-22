@@ -33,20 +33,33 @@
             </div>
         </a>
 
-        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav align-self-right">
-                <li class="nav-item dropdown nav-link dropdown-toggle" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }}
+        <div class="collapse navbar-collapse d-flex dropdown justify-content-end position-relative p-0 w-80" id="navbarSupportedContent me-3 ms-5 align-items-center">
+            <div class="search-field me-5">
+                <form action="{{route('admin.projects.index')}}" class="m-0 d-flex" method="GET">
+                    @csrf
+                    <input class="form-control d-inline-block me-2" name="search" type="text" placeholder="Cerca progetto...">
+                    <button class="btn btn-warning" type="submit">Cerca</button>
+                </form>
+            </div>
+            <div class="user-field">
+                <button class=" nav-link dropdown-toggle align-self-right btn btn-light px-2 py-1 me-3" aria-expanded="false" data-bs-toggle="dropdown" v-pre>
+                    {{ Auth::user()->name }}</button>
+                    <ul class="dropdown-menu p-0">
+                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">{{ __('Logout') }} </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                 </form></li>
 
-                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">{{ __('Logout') }} </a>
+                      </ul>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                         </form>
+
+
 
                 </li>
             </ul>
+            </div>
+
         </div>
     </div>
 </nav>
