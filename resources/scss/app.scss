@@ -25,14 +25,16 @@ a{
     min-height:100vh;
     overflow-y:hidden;
     overflow-x: hidden;
+    background-color: rgba(238, 238, 238, 0.701);
 
     main .dc-proj{
-        padding:10px 40px 100px 18vw;
+        padding:0px 40px 100px 18vw;
         background-color: rgba(238, 238, 238, 0.701);
         overflow-y:hidden;
         overflow-x: hidden;
     }
     main{
+        background-color: rgba(238, 238, 238, 0.701);
         position:relative;
         top:80px;
         padding-top:30px;
